@@ -156,6 +156,28 @@ main {
     }
 }
 
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column;
+        max-width: 320px;
+        min-height: 520px;
+
+        .img-container {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $border-radius;
+            max-height: 200px;
+        }
+
+        .content {
+            flex: 0;
+            .detail {
+                line-height: 23px;
+            }
+        }
+    }
+
+}
+
 
 
 .attribution {

@@ -175,6 +175,30 @@ main {
   fill: #fff;
 }
 
+@media (max-width: 480px) {
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 320px;
+    min-height: 520px;
+  }
+  .card .img-container {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1rem;
+    max-height: 200px;
+  }
+  .card .content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+  }
+  .card .content .detail {
+    line-height: 23px;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
