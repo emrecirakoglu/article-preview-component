@@ -26,7 +26,8 @@
                 </div>
 
                 <div class="detail">
-                    Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.
+                    Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and
+                    uninviting. I’ve got some simple tips to help you make any room feel complete.
                 </div>
 
                 <div class="footer">
@@ -34,30 +35,65 @@
                     <img class="avatar" src="images/avatar-michelle.jpg" alt="">
 
                     <div class="name-date">
-                        <div class="identity">
+                        <span class="identity">
                             Michelle Appleton
-                        </div>
+                        </span>
 
-                        <div class="date">
+                        <span class="date">
                             28 Jun 2020
-                        </div>
+                        </span>
                     </div>
 
-                    <div class="share">
-                        <img src="images/icon-share.svg" type="">
+                    <div class="popover-menu-wrapper">
+
+                        <a class="shareBtn" id="shareBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+                                <path fill="#6E8098"
+                                    d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+                            </svg>
+                        </a>
+
+                        <ul class="popover-menu">
+                            <li class="popover-text">
+                                SHARE
+                            </li>
+                            <li>
+                                <a href=""><img class="link" src="images/icon-facebook.svg" alt=""></a>
+                            </li>
+
+                            <li>
+                                <a href=""><img class="link" src="images/icon-twitter.svg" alt=""></a>
+                            </li>
+
+                            <li>
+                                <a href=""><img class="link" src="images/icon-pinterest.svg" alt=""></a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
-
             </div>
-
-        </div>
 
     </main>
 
 
     <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Emre Çırakoğlu</a>.
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+        <a href="#">Emre Çırakoğlu</a>.
     </div>
 </body>
 
 </html>
+
+<script>
+
+    const shareBtn = document.getElementById("shareBtn");
+    const menu = document.querySelector(".popover-menu");
+
+    shareBtn.addEventListener("click", () => {
+        shareBtn.classList.toggle("shareBtn-active");
+        menu.classList.toggle("popover-menu-active");
+    });
+
+
+</script>

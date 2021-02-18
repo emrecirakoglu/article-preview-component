@@ -78,24 +78,85 @@ main {
                     color: $VeryDarkGrayishBlue;
                 }
                 .date {
+                    display: block;
                     color: $DesaturatedDarkBlue;
                 }
             }
-            .share {
-                border-radius: 50%;
-                display: grid;
-                place-items: center;
-                width: 35px;
-                height: 35px;
-                background-color: $LightGrayishBlue;
+
+            .popover-menu-wrapper {
+
                 margin-left: auto;
-                &:hover {
-                    cursor: pointer;
+                position: relative;
+
+                .popover-menu {
+                    position: absolute;
+                    bottom: 140%;
+                    left: 50%;
+                    transform: translate(-50%, -8px);
+
+                    display: flex;
+                    opacity: 0;
+                    width: 250px;
+                    background-color:$VeryDarkGrayishBlue;
+                    padding: 1rem 2rem;
+                    border-radius: 10px;
+                    list-style: none;
+                    align-items: center;
+                    justify-content:space-around;
+                    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+                    transition: opacity 0.35s;
+
+                    .popover-text {
+                        color: $GrayishBlue;
+                        letter-spacing: 4px;
+                    }                    
+                }
+
+                .popover-menu::before {
+                    content:"";
+                    position: absolute;
+                    top: 110%;
+                    left: 50%;
+                    transform: translate(-50%, -8px);
+                    transition: 1s;
+
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 15px 16px 0 16px;
+                    border-color: $VeryDarkGrayishBlue transparent transparent transparent;
+                }
+
+                .popover-menu-active {
+                    opacity: 1;
+                }
+
+                .shareBtn {
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    width: 35px;
+                    height: 35px;
+                    background-color: $LightGrayishBlue;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .shareBtn-active {
+                    background-color:$VeryDarkGrayishBlue!important;
+                    path {
+                        fill: #fff;
+                    }
                 }
             }
+
         }
     }
 }
+
+
 
 .attribution {
     font-size: 11px;
