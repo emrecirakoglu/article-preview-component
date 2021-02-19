@@ -29,7 +29,6 @@ main {
 .card {
   border: 1px transparent;
   width: 720px;
-  max-height: 290px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,52 +48,67 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
+  min-height: 220px;
 }
 
 .card .content {
   -webkit-box-flex: 7;
       -ms-flex: 7;
           flex: 7;
-  padding: 1.5rem 2rem;
 }
 
 .card .content .header {
   color: #48556a;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 1.5rem 2.5rem 1rem 2rem;
+  letter-spacing: 1px;
 }
 
 .card .content .detail {
-  padding: 1rem 0;
+  line-height: 22px;
   color: #6d7f97;
+  padding: 0 2.5rem 1rem 2rem;
 }
 
 .card .content .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 72px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: .5rem 2rem .5rem 2rem;
 }
 
-.card .content .footer .avatar {
+.card .content .footer .footer-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card .content .footer .footer-left .avatar {
   border-radius: 50%;
   width: 40px;
 }
 
-.card .content .footer .name-date {
+.card .content .footer .footer-left .name-date {
   padding-left: 0.75rem;
 }
 
-.card .content .footer .name-date .identity {
+.card .content .footer .footer-left .name-date .identity {
   font-weight: 700;
   color: #48556a;
 }
 
-.card .content .footer .name-date .date {
+.card .content .footer .footer-left .name-date .date {
   display: block;
   color: #6d7f97;
+}
+
+.card .content .footer .mobile-menu {
+  display: none;
 }
 
 .card .content .footer .popover-menu-wrapper {
@@ -128,11 +142,6 @@ main {
   transition: opacity 0.35s;
 }
 
-.card .content .footer .popover-menu-wrapper .popover-menu .popover-text {
-  color: #9eafc2;
-  letter-spacing: 4px;
-}
-
 .card .content .footer .popover-menu-wrapper .popover-menu::before {
   content: "";
   position: absolute;
@@ -158,8 +167,8 @@ main {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
   background-color: #ecf2f8;
 }
 
@@ -168,11 +177,16 @@ main {
 }
 
 .card .content .footer .popover-menu-wrapper .shareBtn-active {
-  background-color: #48556a !important;
+  background-color: #48556a;
 }
 
 .card .content .footer .popover-menu-wrapper .shareBtn-active path {
   fill: #fff;
+}
+
+.menu-text {
+  color: #9eafc2;
+  letter-spacing: 4px;
 }
 
 @media (max-width: 480px) {
@@ -181,8 +195,8 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    max-width: 320px;
-    min-height: 520px;
+    max-width: 330px;
+    min-height: 500px;
   }
   .card .img-container {
     border-bottom-left-radius: 0;
@@ -193,9 +207,53 @@ main {
     -webkit-box-flex: 0;
         -ms-flex: 0;
             flex: 0;
+    padding-bottom: 0;
+  }
+  .card .content .header {
+    letter-spacing: normal;
   }
   .card .content .detail {
     line-height: 23px;
+  }
+  .card .content .footer {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .card .content .footer .mobile-menu {
+    display: none;
+    list-style: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    z-index: 10;
+  }
+  .card .content .footer .mobile-menu li {
+    margin: 0 .5rem;
+  }
+  .card .content .footer .mobile-menu li:first-child {
+    margin-left: 0;
+  }
+  .card .content .footer .shareBtn-active {
+    background-color: #6d7f97 !important;
+  }
+  .card .content .footer .shareBtn-active path {
+    fill: #fff;
+  }
+  .card .popover-menu {
+    display: none !important;
+  }
+  .card .show {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .card .hide {
+    display: none !important;
+  }
+  .card .mobile-menu-active {
+    background-color: #48556a;
   }
 }
 

@@ -37,7 +37,6 @@ main {
 .card {
     border: 1px transparent;
     width: 720px;
-    max-height: 290px;
     display: flex;
     background-color: #fff;
     border-radius: $border-radius;
@@ -50,37 +49,50 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         height: auto;
+        min-height: 220px;
     }
     .content {
         flex: 7;
-        padding: 1.5rem 2rem;
         .header {
             color: $VeryDarkGrayishBlue;
             font-weight: $text-bold;
-            font-size: 1.1rem;
-            // line-height: 1.7rem;
+            font-size: 1rem;
+            padding: 1.5rem 2.5rem 1rem 2rem;
+            letter-spacing: 1px;
         }
         .detail {
-            padding: 1rem 0;
+            line-height: 22px;
             color: $DesaturatedDarkBlue;
+            padding: 0 2.5rem 1rem 2rem;
         }
         .footer {
             display: flex;
+            min-height: 72px;
             align-items: center;
-            .avatar {
-                border-radius: 50%;
-                width: 40px;
+            padding: .5rem 2rem .5rem 2rem;
+
+            .footer-left {
+                display: flex;
+                .avatar {
+                    border-radius: 50%;
+                    width: 40px;
+                }
+    
+                .name-date {
+                    padding-left: 0.75rem;
+                    .identity {
+                        font-weight: $text-bold;
+                        color: $VeryDarkGrayishBlue;
+                    }
+                    .date {
+                        display: block;
+                        color: $DesaturatedDarkBlue;
+                    }
+                }
             }
-            .name-date {
-                padding-left: 0.75rem;
-                .identity {
-                    font-weight: $text-bold;
-                    color: $VeryDarkGrayishBlue;
-                }
-                .date {
-                    display: block;
-                    color: $DesaturatedDarkBlue;
-                }
+
+            .mobile-menu {
+                display: none;
             }
 
             .popover-menu-wrapper {
@@ -105,12 +117,7 @@ main {
                     justify-content:space-around;
                     // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-                    transition: opacity 0.35s;
-
-                    .popover-text {
-                        color: $GrayishBlue;
-                        letter-spacing: 4px;
-                    }                    
+                    transition: opacity 0.35s;                
                 }
 
                 .popover-menu::before {
@@ -136,8 +143,8 @@ main {
                     border-radius: 50%;
                     display: grid;
                     place-items: center;
-                    width: 35px;
-                    height: 35px;
+                    width: 33px;
+                    height: 33px;
                     background-color: $LightGrayishBlue;
                     &:hover {
                         cursor: pointer;
@@ -145,7 +152,7 @@ main {
                 }
 
                 .shareBtn-active {
-                    background-color:$VeryDarkGrayishBlue!important;
+                    background-color:$VeryDarkGrayishBlue;
                     path {
                         fill: #fff;
                     }
@@ -156,23 +163,72 @@ main {
     }
 }
 
+.menu-text {
+    color: $GrayishBlue;
+    letter-spacing: 4px;
+}    
+
 @media (max-width: 480px) {
     .card {
         flex-direction: column;
-        max-width: 320px;
-        min-height: 520px;
+        max-width: 330px;
+        min-height: 500px;
 
         .img-container {
             border-bottom-left-radius: 0;
             border-top-right-radius: $border-radius;
             max-height: 200px;
         }
+   
 
         .content {
             flex: 0;
+            padding-bottom: 0;
+
+            .header {
+                letter-spacing:normal;
+            }
+            
             .detail {
                 line-height: 23px;
             }
+
+            .footer {
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+                .mobile-menu{
+                    display:none;
+                    list-style: none;
+                    align-items: center;
+                    justify-content:space-around;
+                    z-index: 10;
+                    li {
+                        margin: 0 .5rem;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .shareBtn-active {
+                    background-color:$DesaturatedDarkBlue!important;
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+     
+        }
+        .popover-menu {
+            display:none!important;
+        }
+        .show {
+            display: flex!important;
+        }
+        .hide {
+            display: none!important;
+        }
+        .mobile-menu-active {
+            background-color: $VeryDarkGrayishBlue;
         }
     }
 

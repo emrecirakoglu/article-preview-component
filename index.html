@@ -32,17 +32,35 @@
 
                 <div class="footer">
 
-                    <img class="avatar" src="images/avatar-michelle.jpg" alt="">
+                    <div class="footer-left">
+                        <img class="avatar" src="images/avatar-michelle.jpg" alt="">
 
-                    <div class="name-date">
-                        <span class="identity">
-                            Michelle Appleton
-                        </span>
-
-                        <span class="date">
-                            28 Jun 2020
-                        </span>
+                        <div class="name-date">
+                            <span class="identity">
+                                Michelle Appleton
+                            </span>
+    
+                            <span class="date">
+                                28 Jun 2020
+                            </span>
+                        </div>
+    
                     </div>
+
+                    <ul class="mobile-menu">
+                        <li class="menu-text">
+                            SHARE
+                        </li>
+                        <li>
+                            <a href=""><img class="link" src="images/icon-facebook.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img class="link" src="images/icon-twitter.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img class="link" src="images/icon-pinterest.svg" alt=""></a>
+                        </li>
+                    </ul>
 
                     <div class="popover-menu-wrapper">
 
@@ -54,7 +72,7 @@
                         </a>
 
                         <ul class="popover-menu">
-                            <li class="popover-text">
+                            <li class="menu-text">
                                 SHARE
                             </li>
                             <li>
@@ -89,10 +107,17 @@
 
     const shareBtn = document.getElementById("shareBtn");
     const menu = document.querySelector(".popover-menu");
+    const footerLeft = document.querySelector(".footer-left");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const footer = document.querySelector(".footer");
 
+    
     shareBtn.addEventListener("click", () => {
         shareBtn.classList.toggle("shareBtn-active");
         menu.classList.toggle("popover-menu-active");
+        footerLeft.classList.toggle("hide");
+        mobileMenu.classList.toggle("show");
+        footer.classList.toggle("mobile-menu-active");
     });
 
 
